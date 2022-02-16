@@ -16,7 +16,8 @@ conda info
 
 if [ -f environment.yml ]; then
     puts-step "Installing dependencies using Conda environment.yml"
-    conda env update --file environment.yml  --name base --yes | indent
+    conda env update --file environment.yml  --name base | indent
+    conda activate base
 fi   
 
 if [ -f conda-requirements.txt ]; then

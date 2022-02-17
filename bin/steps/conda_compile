@@ -12,11 +12,6 @@ echo "nomkl" > $HOME/.heroku/miniconda/conda-meta/pinned
 echo "added pinned file in $HOME/.heroku/miniconda/conda-meta/pinned"
 conda install nomkl
 
-if [ -f environment.yml ]; then
-    puts-step "Installing dependencies using Conda environment.yml"
-    conda env update --file environment.yml | indent
-fi   
-
 if [ -f conda-requirements.txt ]; then
     puts-step "Installing dependencies using Conda"
     conda install --file conda-requirements.txt --yes | indent
